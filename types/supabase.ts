@@ -7,6 +7,31 @@ export type Json =
   | Json[]
 
 export type Database = {
+  graphql_public: {
+    Tables: {
+      [_ in never]: never
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      graphql: {
+        Args: {
+          operationName?: string
+          query?: string
+          variables?: Json
+          extensions?: Json
+        }
+        Returns: Json
+      }
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
   public: {
     Tables: {
       applicationform: {
@@ -35,6 +60,87 @@ export type Database = {
           gender?: string | null
           id?: number
           preferredmodule?: string | null
+          student_id?: string | null
+        }
+        Relationships: []
+      }
+      assigned_module: {
+        Row: {
+          additional_info: string | null
+          avatar: string | null
+          coure_grade: number | null
+          course_code: string | null
+          created_at: string
+          degree: string | null
+          email: string | null
+          gender: string | null
+          gpa: number | null
+          id: number
+          min_gpa: number | null
+          name: string | null
+          required_course: string | null
+          student_id: string | null
+          work_permit_required: boolean | null
+        }
+        Insert: {
+          additional_info?: string | null
+          avatar?: string | null
+          coure_grade?: number | null
+          course_code?: string | null
+          created_at?: string
+          degree?: string | null
+          email?: string | null
+          gender?: string | null
+          gpa?: number | null
+          id?: number
+          min_gpa?: number | null
+          name?: string | null
+          required_course?: string | null
+          student_id?: string | null
+          work_permit_required?: boolean | null
+        }
+        Update: {
+          additional_info?: string | null
+          avatar?: string | null
+          coure_grade?: number | null
+          course_code?: string | null
+          created_at?: string
+          degree?: string | null
+          email?: string | null
+          gender?: string | null
+          gpa?: number | null
+          id?: number
+          min_gpa?: number | null
+          name?: string | null
+          required_course?: string | null
+          student_id?: string | null
+          work_permit_required?: boolean | null
+        }
+        Relationships: []
+      }
+      comments: {
+        Row: {
+          comment: string | null
+          coordinator_id: string | null
+          created_at: string
+          id: number
+          module_code: string | null
+          student_id: string | null
+        }
+        Insert: {
+          comment?: string | null
+          coordinator_id?: string | null
+          created_at?: string
+          id?: number
+          module_code?: string | null
+          student_id?: string | null
+        }
+        Update: {
+          comment?: string | null
+          coordinator_id?: string | null
+          created_at?: string
+          id?: number
+          module_code?: string | null
           student_id?: string | null
         }
         Relationships: []
